@@ -20,11 +20,11 @@ interface NavBarProps {
 
 export function NavBar({ items, className, disableSplashEffect = false }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      // Use the window.innerWidth directly where needed instead of storing in state
+      // or remove if not needed
     }
 
     handleResize()

@@ -1,8 +1,6 @@
 'use client'
 
-import { NavBarDemo } from "@/components/Navbar"
 import Hero from "@/components/Hero"
-import VerticalScroll from "@/components/VerticalScroll"
 import { ScrollBasedVelocityDemo } from "@/components/Scroll2"
 import { TimelineDemo } from "@/components/Timeline"
 import { BentoGridDemo } from "@/components/Projects"
