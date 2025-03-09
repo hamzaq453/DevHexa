@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div>
     <SplashCursor />
-    <HeroGeometric badge="Kokonut UI"
+    <HeroGeometric badge="DevHexa"
       title1 = "Elevate Your"
       title2 = "Digital Vision" />
    

@@ -8,11 +8,12 @@ export function ScrollBasedVelocityDemo() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show the velocity scroll component only after scrolling past a certain point
+      // Show the velocity scroll component only within a specific scroll range
       const scrollPosition = window.scrollY;
-      const triggerPoint = window.innerHeight * 0.8; // 80% of viewport height
+      const triggerPointStart = window.innerHeight * 0.8; // 80% of viewport height
+      const triggerPointEnd = window.innerHeight * 2.5; // Hide before reaching Timeline section
       
-      setIsVisible(scrollPosition > triggerPoint);
+      setIsVisible(scrollPosition > triggerPointStart && scrollPosition < triggerPointEnd);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,7 +21,7 @@ export function ScrollBasedVelocityDemo() {
   }, []);
 
   return (
-    <div className="bg-black w-full relative h-[10%]">
+    <div className="bg-black w-full relative h-screen">
       <div className={cn(
         "fixed inset-0 flex items-center justify-center pointer-events-none",
         "transition-opacity duration-500",
@@ -30,20 +31,18 @@ export function ScrollBasedVelocityDemo() {
           <div
             className={cn(
               "rounded-xl w-full h-[500px]",
-              "bg-black-100/50 dark:bg-neutral-900/50 backdrop-blur-sm",
+              "bg-black backdrop-blur-sm",
               "flex items-center justify-center"
             )}
           >
             <VelocityScroll
               text="A S D F G H J K L Z X C V B N M"
               default_velocity={5}
-              className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] pointer-events-auto"
+              className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-blue-500 drop-shadow-sm md:text-7xl md:leading-[5rem] pointer-events-auto"
             />
           </div>
         </div>
       </div>
-
-      <div className="h-[200vh]" aria-hidden="true" />
     </div>
   );
 }
