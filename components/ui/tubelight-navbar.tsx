@@ -39,7 +39,7 @@ export function NavBar({ items, className, disableSplashEffect = false }: NavBar
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-3 bg-white border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -52,7 +52,7 @@ export function NavBar({ items, className, disableSplashEffect = false }: NavBar
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary",
+                isActive && "bg-black text-white",
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
@@ -77,7 +77,7 @@ export function NavBar({ items, className, disableSplashEffect = false }: NavBar
                   </div>
                 </motion.div>
               ) : isActive ? (
-                <div className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"></div>
+                <div className="absolute inset-0 w-full bg-primary rounded-full -z-10"></div>
               ) : null}
             </Link>
           )

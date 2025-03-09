@@ -2,16 +2,18 @@
 
 import { NavBarDemo } from "@/components/Navbar"
 import Hero from "@/components/Hero"
-
- 
+import VerticalScroll from "@/components/VerticalScroll"
+import { ScrollBasedVelocityDemo } from "@/components/Scroll2"
 export default function SplineSceneBasic() {
   return (
-    <div>
-      
-      <div>
+    <div className="flex flex-col min-h-screen"> 
+      <section className="w-full">  
         <Hero/>
-      </div>
-
+      </section>
+      
+      <section className="w-full mt-2">
+        <ScrollBasedVelocityDemo/>
+      </section>
     </div>
   )
 }
